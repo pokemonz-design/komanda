@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Состав команды для AI-проектов ФЭС</title>
+
+
+<!-- Библиотека для создания изображения HTML-блока -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Библиотека для создания PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<style>
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+
+
+  .ai-team-widget {
+
+    --navy: #0a164d;
+    --header: #295a77;
+    --header-dark: #214c67;
+
+    --green: #d9f3e3;
+    --cyan: #d7f1f6;
+    --blue: #d8eafa;
+    --blue2: #dde5fb;
+    --purple1: #eadbfa;
+    --purple2: #dfcff5;
+    --orange: #fae4bd;
+
+    width: 757px;
+    height: 430px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    color: var(--navy);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+  }
+
+
+  .ai-team-widget * {
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     КНОПКИ
+     ========================= */
+
+  .ai-team-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 7px;
+
+    height: 30px;
+
+    padding: 4px 8px 2px;
+  }
+
+
+  .ai-action-btn {
+
+    height: 24px;
+
+    padding: 0 11px;
+
+    border: 1px solid #295a77;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #295a77;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10.5px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+      background .15s ease,
+      color .15s ease;
+  }
+
+
+  .ai-action-btn:hover {
+    background: #edf5fa;
+  }
+
+
+  .ai-action-btn--primary {
+
+    background: #295a77;
+
+    color: #ffffff;
+  }
+
+
+  .ai-action-btn--primary:hover {
+    background: #214c67;
+  }
+
+
+  /* =========================
+     ШАПКА
+     ========================= */
+
+  .ai-team-header {
+
+    height: 62px;
+
+    padding: 4px 13px 5px;
+  }
+
+
+  .ai-team-title {
+
+    font-size: 26px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    color: var(--navy);
+  }
+
+
+  .ai-team-subtitle {
+
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    line-height: 1.1;
+
+    color: #356f9d;
+  }
+
+
+  /* =========================
+     ОСНОВНАЯ ОБЛАСТЬ
+     ========================= */
+
+  .ai-team-body {
+
+    display: grid;
+
+    grid-template-columns: 205px 1fr;
+
+    gap: 7px;
+
+    height: 338px;
+
+    padding: 0 8px 8px;
+  }
+
+
+  /* =========================
+     ВКЛАДКИ СЛЕВА
+     ========================= */
+
+  .ai-team-tabs {
+
+    display: grid;
+
+    grid-template-rows: repeat(7, 1fr);
+
+    gap: 3px;
+
+    min-height: 0;
+  }
+
+
+  .project-tab {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    width: 100%;
+
+    padding: 4px 8px;
+
+    border: 1px solid transparent;
+
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11.3px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+      transform .15s ease,
+      box-shadow .15s ease,
+      border-color .15s ease;
+  }
+
+
+  .project-tab:hover {
+    transform: translateX(2px);
+  }
+
+
+  .project-tab.active {
+
+    border-color: currentColor;
+
+    box-shadow: 0 2px 8px rgba(17, 35, 81, .12);
+  }
+
+
+  .project-tab.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -7px;
+
+    top: 50%;
+
+    width: 0;
+
+    height: 0;
+
+    transform: translateY(-50%);
+
+    border-top: 6px solid transparent;
+
+    border-bottom: 6px solid transparent;
+
+    border-left: 7px solid currentColor;
+  }
+
+
+  .tab-num {
+
+    flex: 0 0 auto;
+
+    font-weight: 800;
+  }
+
+
+  /* =========================
+     ЦВЕТА ВКЛАДОК
+     ========================= */
+
+  .tab-1 {
+
+    background: var(--green);
+
+    color: #08774f;
+  }
+
+
+  .tab-2 {
+
+    background: var(--cyan);
+
+    color: #078eae;
+  }
+
+
+  .tab-3 {
+
+    background: var(--blue);
+
+    color: #1967c9;
+  }
+
+
+  .tab-4 {
+
+    background: var(--blue2);
+
+    color: #225dbd;
+  }
+
+
+  .tab-5 {
+
+    background: var(--purple1);
+
+    color: #8134d2;
+  }
+
+
+  .tab-6 {
+
+    background: var(--purple2);
+
+    color: #6626bd;
+  }
+
+
+  .tab-7 {
+
+    background: var(--orange);
+
+    color: #d96f00;
+  }
+
+
+  /* =========================
+     ПРАВАЯ ПАНЕЛЬ
+     ========================= */
+
+  .project-content {
+
+    display: none;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    height: 100%;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+  }
+
+
+  .project-content.active {
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  /* =========================
+     ЦВЕТА ПАНЕЛЕЙ
+     ========================= */
+
+  .content-1 {
+    background: var(--green);
+  }
+
+  .content-2 {
+    background: var(--cyan);
+  }
+
+  .content-3 {
+    background: var(--blue);
+  }
+
+  .content-4 {
+    background: var(--blue2);
+  }
+
+  .content-5 {
+    background: var(--purple1);
+  }
+
+  .content-6 {
+    background: var(--purple2);
+  }
+
+  .content-7 {
+    background: var(--orange);
+  }
+
+
+  /* =========================
+     ЗАГОЛОВОК ВЫБРАННОГО ПРОЕКТА
+     ========================= */
+
+  .project-heading {
+
+    min-height: 48px;
+
+    padding: 7px 12px 5px;
+
+    border-bottom: 1px solid rgba(255,255,255,.8);
+  }
+
+
+  .project-heading strong {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--navy);
+
+    font-size: 15px;
+
+    line-height: 1.07;
+
+    font-weight: 800;
+  }
+
+
+  .project-heading span {
+
+    display: block;
+
+    color: #394b6a;
+
+    font-size: 11px;
+
+    line-height: 1.1;
+  }
+
+
+  /* =========================
+     КАРТОЧКИ СПРАВА
+     ========================= */
+
+  .info-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr .85fr;
+
+    gap: 4px;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 5px;
+  }
+
+
+  .info-card {
+
+    min-width: 0;
+
+    min-height: 0;
+
+    padding: 5px 7px;
+
+    background: rgba(255,255,255,.42);
+
+    border: 1px solid rgba(255,255,255,.75);
+
+    border-radius: 5px;
+
+    overflow: hidden;
+  }
+
+
+  .info-card-wide {
+    grid-column: 1 / -1;
+  }
+
+
+  .info-card h3 {
+
+    margin: 0 0 3px;
+
+    color: var(--header-dark);
+
+    font-size: 10px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+  }
+
+
+  .info-card p {
+
+    margin: 0;
+
+    color: #243858;
+
+    font-size: 10.3px;
+
+    line-height: 1.15;
+  }
+
+
+  .info-card ul {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+  }
+
+
+  .info-card li {
+
+    position: relative;
+
+    margin: 0 0 2px;
+
+    padding-left: 11px;
+
+    color: #243858;
+
+    font-size: 10.2px;
+
+    line-height: 1.08;
+  }
+
+
+  .info-card li:last-child {
+    margin-bottom: 0;
+  }
+
+
+  .info-card li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: .35em;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+  }
+
+
+  /* =========================
+     АКЦЕНТЫ
+     ========================= */
+
+  .content-1 .info-card h3 {
+    color: #08774f;
+  }
+
+  .content-2 .info-card h3 {
+    color: #078eae;
+  }
+
+  .content-3 .info-card h3 {
+    color: #1967c9;
+  }
+
+  .content-4 .info-card h3 {
+    color: #225dbd;
+  }
+
+  .content-5 .info-card h3 {
+    color: #8134d2;
+  }
+
+  .content-6 .info-card h3 {
+    color: #6626bd;
+  }
+
+  .content-7 .info-card h3 {
+    color: #d96f00;
+  }
+
+
+  /* =========================
+     ФОКУС
+     ========================= */
+
+  .project-tab:focus-visible,
+  .ai-action-btn:focus-visible {
+
+    outline: 2px solid var(--navy);
+
+    outline-offset: 1px;
+  }
+
+
+  /* =========================
+     РЕЖИМ СОХРАНЕНИЯ PDF
+     Кнопки исчезают,
+     контент занимает все 430 px
+     ========================= */
+
+  .ai-team-widget.pdf-mode .ai-team-actions {
+    display: none;
+  }
+
+
+  .ai-team-widget.pdf-mode .ai-team-body {
+    height: 368px;
+  }
+
+
+  /* =========================
+     ПЕЧАТЬ
+     ========================= */
+
+  @media print {
+
+    body * {
+      visibility: hidden;
+    }
+
+    .ai-team-widget,
+    .ai-team-widget * {
+      visibility: visible;
+    }
+
+    .ai-team-widget {
+
+      position: absolute;
+
+      left: 0;
+
+      top: 0;
+
+      width: 757px;
+
+      height: 430px;
+
+      margin: 0;
+    }
+
+    .ai-team-actions {
+      display: none !important;
+    }
+
+    .ai-team-body {
+      height: 368px !important;
+    }
+
+  }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="ai-team-widget" id="aiTeamWidget">
+
+
+  <!-- КНОПКИ -->
+
+  <div class="ai-team-actions">
+
+    <button
+      class="ai-action-btn"
+      type="button"
+      id="printAiTeam">
+      Распечатать
+    </button>
+
+
+    <button
+      class="ai-action-btn ai-action-btn--primary"
+      type="button"
+      id="saveAiTeamPdf">
+      Сохранить PDF
+    </button>
+
+  </div>
+
+
+  <!-- ШАПКА -->
+
+  <div class="ai-team-header">
+
+    <div class="ai-team-title">
+      Состав команды для AI-проектов ФЭС
+    </div>
+
+    <div class="ai-team-subtitle">
+      Какие роли нужны в зависимости от технической конфигурации проекта
+    </div>
+
+  </div>
+
+
+  <div class="ai-team-body">
+
+
+    <!-- ВКЛАДКИ -->
+
+    <div class="ai-team-tabs" role="tablist">
+
+
+      <button
+        class="project-tab tab-1 active"
+        data-project="p1"
+        role="tab"
+        aria-selected="true">
+
+        <span class="tab-num">1.</span>
+
+        <span>
+          ИИ-ассистент<br>
+          на готовой модели
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-2"
+        data-project="p2"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">2.</span>
+
+        <span>
+          ИИ-агент<br>
+          с интеграциями
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-3"
+        data-project="p3"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">3.</span>
+
+        <span>
+          Мультиагентная<br>
+          система
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-4"
+        data-project="p4"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">4.</span>
+
+        <span>
+          Открытая модель<br>
+          внутри контура
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-5"
+        data-project="p5"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">5.</span>
+
+        <span>
+          Дообучение<br>
+          готовой LLM
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-6"
+        data-project="p6"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">6.</span>
+
+        <span>
+          Собственная<br>
+          ML-модель
+        </span>
+
+      </button>
+
+
+      <button
+        class="project-tab tab-7"
+        data-project="p7"
+        role="tab"
+        aria-selected="false">
+
+        <span class="tab-num">7.</span>
+
+        <span>
+          Работающий<br>
+          ИИ-продукт
+        </span>
+
+      </button>
+
+
+    </div>
+
+
+
+    <!-- ========================================
+         1. ИИ-АССИСТЕНТ
+         ======================================== -->
+
+    <section
+      class="project-content content-1 active"
+      id="p1">
+
+
+      <div class="project-heading">
+
+        <strong>
+          ИИ-ассистент на готовой модели
+        </strong>
+
+        <span>
+          Базовая конфигурация. Используется готовая модель.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Аналитик или методолог</li>
+            <li>Технический специалист</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Описывает задачи, источники данных, правила ответа,
+            ключевые критерии качества
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Подключает модель и корпоративные данные,
+            настраивает RAG, доступы и интеграции
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Методолог</li>
+            <li>Продуктовый менеджер</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если нужны сложные интеграции, кастомизация модели
+            или высокий объем доработок.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         2. ИИ-АГЕНТ
+         ======================================== -->
+
+    <section
+      class="project-content content-2"
+      id="p2">
+
+
+      <div class="project-heading">
+
+        <strong>
+          ИИ-агент с интеграциями
+        </strong>
+
+        <span>
+          Подключение к системам и выполнение действий.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Аналитик или методолог</li>
+            <li>Разработчик AI-решения</li>
+            <li>Специалист по интеграциям</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Описывает сценарии работы, разрешенные действия,
+            отключение и точки контроля человека
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Настраивает API, интеграции, агентные сценарии,
+            права доступа, журналирование и мониторинг
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Методолог</li>
+            <li>Специалист по процессам</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если требуются нестандартные интеграции,
+            разработка сложной логики агента
+            или повышенные требования к безопасности.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         3. МУЛЬТИАГЕНТНАЯ СИСТЕМА
+         ======================================== -->
+
+    <section
+      class="project-content content-3"
+      id="p3">
+
+
+      <div class="project-heading">
+
+        <strong>
+          Мультиагентная система
+        </strong>
+
+        <span>
+          Несколько агентов, сложная логика взаимодействия.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Аналитик или методолог</li>
+            <li>Координатор проекта</li>
+            <li>Техническая команда</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Описывает функции агентов, правила их взаимодействия,
+            ограничения и итоговый результат
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Проектирует архитектуру, связывает агентов и системы,
+            настраивает мониторинг и безопасность
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Продуктовый менеджер</li>
+            <li>Специалист по процессам</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если требуется сложная мультиагентная архитектура,
+            нестандартная логика взаимодействий
+            или высокий уровень нагрузки.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         4. ОТКРЫТАЯ МОДЕЛЬ ВНУТРИ КОНТУРА
+         ======================================== -->
+
+    <section
+      class="project-content content-4"
+      id="p4">
+
+
+      <div class="project-heading">
+
+        <strong>
+          Готовая открытая модель внутри корпоративного контура
+        </strong>
+
+        <span>
+          Развертывание модели в инфраструктуре компании.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Аналитик или методолог</li>
+            <li>Специалист по инфраструктуре</li>
+            <li>Эксплуатации модели</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Определяет сценарии применения, требования
+            к данным и критериям приемки
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Разворачивает модель, выделяет вычислительные ресурсы,
+            настраивает доступы, обновления, мониторинг и безопасность
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Специалист по процессам</li>
+            <li>Системный аналитик</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если требуется масштабная инфраструктура, высокая доступность,
+            усиленные требования по безопасности или кастомная сборка.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         5. ДООБУЧЕНИЕ LLM
+         ======================================== -->
+
+    <section
+      class="project-content content-5"
+      id="p5">
+
+
+      <div class="project-heading">
+
+        <strong>
+          Дообучение готовой LLM
+        </strong>
+
+        <span>
+          Адаптация модели под задачи компании.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Специалист по дообучению модели</li>
+            <li>При необходимости — специалисты по данным и эксплуатации</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Определяет требуемый результат, дает предметную экспертизу,
+            помогает готовить и проверять примеры
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Готовит датасет, проводит fine-tuning и эксперименты,
+            оценивает качество, обеспечивает эксплуатацию модели
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Эксперт предметной области</li>
+            <li>Специалист по данным</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если нужен значительный объем данных, сложные метрики качества
+            или регулярное обучение и поддержка модели.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         6. СОБСТВЕННАЯ ML-МОДЕЛЬ
+         ======================================== -->
+
+    <section
+      class="project-content content-6"
+      id="p6">
+
+
+      <div class="project-heading">
+
+        <strong>
+          Собственная прикладная ML-модель
+        </strong>
+
+        <span>
+          Разработка модели под конкретную бизнес-задачу.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Эксперт ФЭС</li>
+            <li>Специалист по моделированию</li>
+            <li>Инженер данных</li>
+            <li>Специалист по промышленной эксплуатации модели</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Формулирует бизнес-задачу, определяет метрики,
+            объясняет смысл данных и принимает результат
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Собирает и готовит данные, разрабатывает и тестирует модели,
+            обеспечивает эксплуатацию и контролирует работу после запуска
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Бизнес-аналитик</li>
+            <li>Предметный эксперт</li>
+            <li>Специалист по данным</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если требуются уникальные алгоритмы, работа с большими данными,
+            высокие требования к качеству модели или MLOps.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         7. РАБОТАЮЩИЙ ИИ-ПРОДУКТ
+         ======================================== -->
+
+    <section
+      class="project-content content-7"
+      id="p7">
+
+
+      <div class="project-heading">
+
+        <strong>
+          Работающий ИИ-продукт, который нужно постоянно развивать
+        </strong>
+
+        <span>
+          Постоянный цикл управления продуктом.
+        </span>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <h3>
+            Минимальный состав команды
+          </h3>
+
+          <ul>
+            <li>Ответственный за развитие продукта</li>
+            <li>Эксперт ФЭС</li>
+            <li>Техническая команда</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывает ФЭС
+          </h3>
+
+          <p>
+            Собирает потребности пользователей, определяет приоритеты
+            и следит за бизнес-результатом
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Что закрывают ИТ/Data
+          </h3>
+
+          <p>
+            Реализует доработки, поддерживает продукт
+            и контролирует технические показатели
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>
+            Кого можно доучить
+          </h3>
+
+          <ul>
+            <li>Продуктовый менеджер</li>
+            <li>Бизнес-аналитик</li>
+            <li>Специалист по данным</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-card info-card-wide">
+
+          <h3>
+            Когда нужен дополнительный найм
+          </h3>
+
+          <p>
+            Если растет объем пользователей, требуется масштабирование продукта,
+            новые каналы и значительные новые функции.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+(function () {
+
+
+  const widget =
+    document.getElementById('aiTeamWidget');
+
+
+  if (!widget) {
+    return;
+  }
+
+
+
+  /* ========================================
+     ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
+     ======================================== */
+
+
+  const tabs =
+    widget.querySelectorAll('.project-tab');
+
+
+  const panels =
+    widget.querySelectorAll('.project-content');
+
+
+
+  tabs.forEach(function(tab) {
+
+
+    tab.addEventListener('click', function() {
+
+
+      const projectId =
+        tab.dataset.project;
+
+
+
+      tabs.forEach(function(item) {
+
+        item.classList.remove('active');
+
+        item.setAttribute(
+          'aria-selected',
+          'false'
+        );
+
+      });
+
+
+
+      panels.forEach(function(panel) {
+
+        panel.classList.remove('active');
+
+      });
+
+
+
+      tab.classList.add('active');
+
+
+      tab.setAttribute(
+        'aria-selected',
+        'true'
+      );
+
+
+
+      const target =
+        widget.querySelector(
+          '#' + projectId
+        );
+
+
+      if (target) {
+
+        target.classList.add('active');
+
+      }
+
+
+    });
+
+
+  });
+
+
+
+  /* ========================================
+     ПЕЧАТЬ
+     ======================================== */
+
+
+  const printButton =
+    document.getElementById('printAiTeam');
+
+
+  if (printButton) {
+
+
+    printButton.addEventListener(
+      'click',
+      function() {
+
+        window.print();
+
+      }
+    );
+
+
+  }
+
+
+
+  /* ========================================
+     СОХРАНЕНИЕ В PDF
+     ======================================== */
+
+
+  const pdfButton =
+    document.getElementById('saveAiTeamPdf');
+
+
+  if (pdfButton) {
+
+
+    pdfButton.addEventListener(
+      'click',
+      async function() {
+
+
+        /* Убираем кнопки на время создания PDF */
+
+        widget.classList.add('pdf-mode');
+
+
+
+        try {
+
+
+          /* Даем браузеру применить новый layout */
+
+          await new Promise(function(resolve) {
+
+            requestAnimationFrame(function() {
+
+              requestAnimationFrame(resolve);
+
+            });
+
+          });
+
+
+
+          /* Создаем изображение блока */
+
+          const canvas =
+            await html2canvas(
+              widget,
+              {
+
+                scale: 2,
+
+                backgroundColor: '#ffffff',
+
+                useCORS: true,
+
+                logging: false,
+
+                width: 757,
+
+                height: 430,
+
+                windowWidth: 757,
+
+                windowHeight: 430
+
+              }
+            );
+
+
+
+          const imageData =
+            canvas.toDataURL(
+              'image/png',
+              1.0
+            );
+
+
+
+          const jsPDF =
+            window.jspdf.jsPDF;
+
+
+
+          /* PDF точно размером с интерактив */
+
+          const pdf =
+            new jsPDF(
+              {
+
+                orientation: 'landscape',
+
+                unit: 'px',
+
+                format: [757, 430],
+
+                hotfixes: ['px_scaling']
+
+              }
+            );
+
+
+
+          pdf.addImage(
+
+            imageData,
+
+            'PNG',
+
+            0,
+
+            0,
+
+            757,
+
+            430,
+
+            undefined,
+
+            'FAST'
+
+          );
+
+
+
+          /* Определяем выбранный сценарий
+             для имени файла */
+
+          const activeTab =
+            widget.querySelector(
+              '.project-tab.active'
+            );
+
+
+          let projectName =
+            'ai-proekt';
+
+
+          if (activeTab) {
+
+
+            const selected =
+              activeTab.dataset.project;
+
+
+            const names = {
+
+              p1: 'ai-assistent',
+
+              p2: 'ai-agent',
+
+              p3: 'multiagentnaya-sistema',
+
+              p4: 'model-vnutri-kontura',
+
+              p5: 'doobuchenie-llm',
+
+              p6: 'ml-model',
+
+              p7: 'ai-product'
+
+            };
+
+
+            if (names[selected]) {
+
+              projectName =
+                names[selected];
+
+            }
+
+
+          }
+
+
+
+          pdf.save(
+            'sostav-komandy-' +
+            projectName +
+            '.pdf'
+          );
+
+
+        }
+
+
+        catch (error) {
+
+
+          console.error(
+            'Ошибка при создании PDF:',
+            error
+          );
+
+
+          alert(
+            'Не удалось создать PDF.'
+          );
+
+
+        }
+
+
+        finally {
+
+
+          /* Возвращаем кнопки */
+
+          widget.classList.remove(
+            'pdf-mode'
+          );
+
+
+        }
+
+
+      }
+    );
+
+
+  }
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
