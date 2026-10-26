@@ -24,6 +24,7 @@
     margin: 0;
     padding: 0;
     background: #ffffff;
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
   }
 
 
@@ -42,8 +43,9 @@
     --purple2: #dfcff5;
     --orange: #fae4bd;
 
-    width: 757px;
-    height: 560px; /* Увеличено, чтобы текст помещался */
+    width: 100%;
+    max-width: 757px; /* Жестко ограничиваем ширину */
+    height: 560px; 
 
     margin: 0 auto;
 
@@ -168,7 +170,7 @@
 
     gap: 8px;
 
-    height: 454px; /* Увеличено под общую высоту 560px */
+    height: 454px; 
 
     padding: 0 8px 8px;
   }
@@ -376,7 +378,7 @@
 
     grid-template-rows: 1fr 1fr .85fr;
 
-    gap: 6px; /* Чуть увеличил отступ между карточками */
+    gap: 6px; 
 
     flex: 1;
 
@@ -392,7 +394,7 @@
 
     min-height: 0;
 
-    padding: 10px 12px; /* Увеличил внутренние отступы */
+    padding: 10px 12px; 
 
     background: rgba(255,255,255,.48);
 
@@ -430,7 +432,7 @@
     color: var(--text);
 
     font-size: 14px; 
-    line-height: 1.35; /* Немного увеличил межстрочный интервал */
+    line-height: 1.35; 
   }
 
 
@@ -520,7 +522,7 @@
 
 
   .ai-team-widget.pdf-mode .ai-team-body {
-    height: 516px; /* 560 - 44 */
+    height: 516px; 
   }
 
 
@@ -1642,7 +1644,7 @@
 
                 width: 757,
 
-                height: 560, /* Обновлено под новую высоту */
+                height: 560, 
 
                 windowWidth: 757,
 
@@ -1676,7 +1678,7 @@
 
                 unit: 'px',
 
-                format: [757, 560], /* Обновлено под новую высоту */
+                format: [757, 560], 
 
                 hotfixes: ['px_scaling']
 
