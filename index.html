@@ -45,7 +45,7 @@
 
     width: 100%;
     max-width: 757px; 
-    height: 680px; /* Высота увеличена, чтобы точно всё влезло */
+    height: 560px; /* Компактная высота */
 
     margin: 0 auto;
 
@@ -130,12 +130,12 @@
 
   .ai-team-header {
 
-    padding: 10px 14px 12px; 
+    padding: 8px 14px 10px; 
   }
 
 
   .ai-team-title {
-    margin: 0 0 5px;
+    margin: 0 0 4px;
 
     color: var(--navy);
 
@@ -166,11 +166,11 @@
 
     display: grid;
 
-    grid-template-columns: 260px 1fr; /* Сделали колонку чуть шире для текста */
+    grid-template-columns: 250px 1fr; 
 
     gap: 8px;
 
-    height: 574px; /* Остаток от 680px */
+    height: 454px; /* Подстроено под общую высоту 560px */
 
     padding: 0 8px 8px;
   }
@@ -184,9 +184,9 @@
 
     display: grid;
 
-    grid-template-rows: repeat(7, 1fr); /* Возвращаем аккуратную сетку */
+    grid-template-rows: repeat(7, 1fr);
 
-    gap: 6px;
+    gap: 4px;
 
     min-height: 0;
   }
@@ -200,13 +200,13 @@
 
     align-items: center;
 
-    gap: 8px;
+    gap: 6px;
 
     width: 100%;
     
     height: 100%;
 
-    padding: 10px 12px; /* Увеличенные отступы для воздуха */
+    padding: 6px 10px;
 
     border: 1px solid transparent;
 
@@ -214,8 +214,8 @@
 
     font-family: Arial, Helvetica, sans-serif;
 
-    font-size: 13px; 
-    line-height: 1.25;
+    font-size: 12.5px; 
+    line-height: 1.2;
 
     font-weight: 800;
 
@@ -272,7 +272,6 @@
     font-weight: 800;
   }
 
-  /* Защита от вылезания текста */
   .project-tab > span:last-child {
     flex: 1;
     min-width: 0;
@@ -340,9 +339,9 @@
 
   .project-heading {
 
-    min-height: 51px;
+    min-height: 45px;
 
-    padding: 8px 12px;
+    padding: 6px 10px;
 
     border-bottom: 1px solid rgba(255,255,255,.85);
   }
@@ -352,11 +351,11 @@
 
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 
     color: var(--navy);
 
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.08;
     font-weight: 800;
   }
@@ -368,7 +367,7 @@
 
     color: #394b6a;
 
-    font-size: 13.5px;
+    font-size: 12.5px;
     line-height: 1.15;
   }
 
@@ -383,15 +382,15 @@
 
     grid-template-columns: 1fr 1fr;
 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 0.8fr; /* Нижний ряд компактнее */
 
-    gap: 6px; 
+    gap: 5px; 
 
     flex: 1;
 
     min-height: 0;
 
-    padding: 6px;
+    padding: 5px;
   }
 
 
@@ -401,7 +400,7 @@
 
     min-height: 0;
 
-    padding: 10px 12px; 
+    padding: 8px 10px; 
 
     background: rgba(255,255,255,.48);
 
@@ -423,11 +422,11 @@
 
   .info-card h3 {
 
-    margin: 0 0 6px;
+    margin: 0 0 4px;
 
     color: var(--header-dark);
 
-    font-size: 13px; 
+    font-size: 12px; 
     line-height: 1;
     font-weight: 800;
 
@@ -441,8 +440,8 @@
 
     color: var(--text);
 
-    font-size: 13.5px; 
-    line-height: 1.35; 
+    font-size: 13px; 
+    line-height: 1.25; 
   }
 
 
@@ -460,13 +459,13 @@
 
     position: relative;
 
-    margin: 0 0 4px;
+    margin: 0 0 2px;
 
-    padding-left: 12px;
+    padding-left: 10px;
 
     color: var(--text);
 
-    font-size: 13.5px; 
+    font-size: 13px; 
     line-height: 1.25;
   }
 
@@ -484,11 +483,11 @@
 
     left: 0;
 
-    top: .35em;
+    top: .4em;
 
-    width: 5px;
+    width: 4px;
 
-    height: 5px;
+    height: 4px;
 
     border-radius: 50%;
 
@@ -532,7 +531,7 @@
 
 
   .ai-team-widget.pdf-mode .ai-team-body {
-    height: 636px; /* 680 - 44 */
+    height: 516px; 
   }
 
 
@@ -561,7 +560,7 @@
 
       width: 757px;
 
-      height: 680px;
+      height: 560px;
 
       margin: 0;
     }
@@ -571,7 +570,7 @@
     }
 
     .ai-team-body {
-      height: 636px !important;
+      height: 516px !important;
     }
 
   }
@@ -1275,7 +1274,6 @@
             <li>Эксперт ФЭС</li>
             <li>Специалист по моделированию</li>
             <li>Инженер данных</li>
-            <li>Специалист по промышленной эксплуатации модели</li>
           </ul>
 
         </div>
@@ -1626,11 +1624,11 @@
 
                 width: 757,
 
-                height: 680, /* Обновлено под новую высоту */
+                height: 560, 
 
                 windowWidth: 757,
 
-                windowHeight: 680
+                windowHeight: 560
 
               }
             );
@@ -1660,7 +1658,7 @@
 
                 unit: 'px',
 
-                format: [757, 680], /* Обновлено под новую высоту */
+                format: [757, 560], 
 
                 hotfixes: ['px_scaling']
 
@@ -1681,7 +1679,7 @@
 
             757,
 
-            680,
+            560,
 
             undefined,
 
