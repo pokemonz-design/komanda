@@ -24,7 +24,7 @@
     margin: 0;
     padding: 0;
     background: #ffffff;
-    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+    overflow-x: hidden; 
   }
 
 
@@ -44,8 +44,8 @@
     --orange: #fae4bd;
 
     width: 100%;
-    max-width: 757px; /* Жестко ограничиваем ширину */
-    height: 560px; 
+    max-width: 757px; 
+    height: 580px; /* Увеличено, чтобы вкладки точно поместились */
 
     margin: 0 auto;
 
@@ -166,11 +166,12 @@
 
     display: grid;
 
-    grid-template-columns: 220px 1fr; 
+    /* Увеличили левую колонку до 240px для вкладок */
+    grid-template-columns: 240px 1fr; 
 
     gap: 8px;
 
-    height: 454px; 
+    height: 474px; /* Увеличено под общую высоту 580px */
 
     padding: 0 8px 8px;
   }
@@ -204,7 +205,7 @@
 
     width: 100%;
 
-    padding: 6px 10px;
+    padding: 8px 10px; /* Увеличен вертикальный отступ */
 
     border: 1px solid transparent;
 
@@ -213,7 +214,7 @@
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: 13.5px; 
-    line-height: 1.15;
+    line-height: 1.2;
 
     font-weight: 800;
 
@@ -270,6 +271,13 @@
     flex: 0 0 auto;
 
     font-weight: 800;
+  }
+
+  /* Гарантируем, что текст будет переноситься аккуратно */
+  .project-tab > span:last-child {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
   }
 
 
@@ -522,7 +530,7 @@
 
 
   .ai-team-widget.pdf-mode .ai-team-body {
-    height: 516px; 
+    height: 536px; /* 580 - 44 */
   }
 
 
@@ -551,7 +559,7 @@
 
       width: 757px;
 
-      height: 560px;
+      height: 580px;
 
       margin: 0;
     }
@@ -561,7 +569,7 @@
     }
 
     .ai-team-body {
-      height: 516px !important;
+      height: 536px !important;
     }
 
   }
@@ -631,8 +639,7 @@
         <span class="tab-num">1.</span>
 
         <span>
-          ИИ-ассистент<br>
-          на готовой модели
+          ИИ-ассистент на готовой модели
         </span>
 
       </button>
@@ -647,8 +654,7 @@
         <span class="tab-num">2.</span>
 
         <span>
-          ИИ-агент<br>
-          с интеграциями
+          ИИ-агент с интеграциями
         </span>
 
       </button>
@@ -663,8 +669,7 @@
         <span class="tab-num">3.</span>
 
         <span>
-          Мультиагентная<br>
-          система
+          Мультиагентная система
         </span>
 
       </button>
@@ -679,8 +684,7 @@
         <span class="tab-num">4.</span>
 
         <span>
-          Открытая модель<br>
-          внутри контура
+          Открытая модель внутри контура
         </span>
 
       </button>
@@ -695,8 +699,7 @@
         <span class="tab-num">5.</span>
 
         <span>
-          Дообучение<br>
-          готовой LLM
+          Дообучение готовой LLM
         </span>
 
       </button>
@@ -711,8 +714,7 @@
         <span class="tab-num">6.</span>
 
         <span>
-          Собственная<br>
-          ML-модель
+          Собственная ML-модель
         </span>
 
       </button>
@@ -727,8 +729,7 @@
         <span class="tab-num">7.</span>
 
         <span>
-          Работающий<br>
-          ИИ-продукт
+          Работающий ИИ-продукт
         </span>
 
       </button>
@@ -1644,11 +1645,11 @@
 
                 width: 757,
 
-                height: 560, 
+                height: 580, /* Обновлено под новую высоту */
 
                 windowWidth: 757,
 
-                windowHeight: 560
+                windowHeight: 580
 
               }
             );
@@ -1678,7 +1679,7 @@
 
                 unit: 'px',
 
-                format: [757, 560], 
+                format: [757, 580], /* Обновлено под новую высоту */
 
                 hotfixes: ['px_scaling']
 
@@ -1699,7 +1700,7 @@
 
             757,
 
-            560,
+            580,
 
             undefined,
 
