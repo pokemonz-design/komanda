@@ -45,7 +45,7 @@
 
     width: 100%;
     max-width: 757px; 
-    height: 560px; /* Компактная высота */
+    height: 600px; /* Увеличено под новые шрифты */
 
     margin: 0 auto;
 
@@ -170,7 +170,7 @@
 
     gap: 8px;
 
-    height: 454px; /* Подстроено под общую высоту 560px */
+    height: 494px; /* 600 - 44 - 62 (шапка) */
 
     padding: 0 8px 8px;
   }
@@ -214,7 +214,7 @@
 
     font-family: Arial, Helvetica, sans-serif;
 
-    font-size: 14.5px; /* Увеличенный шрифт вкладок */
+    font-size: 14.5px; /* Оставили крупный шрифт */
     line-height: 1.25;
 
     font-weight: 800;
@@ -270,7 +270,7 @@
   .tab-num {
     flex: 0 0 auto;
     font-weight: 800;
-    font-size: 14.5px; /* Номер тоже увеличиваем */
+    font-size: 14.5px; 
   }
 
   .project-tab > span:last-child {
@@ -340,9 +340,9 @@
 
   .project-heading {
 
-    min-height: 45px;
+    min-height: 50px;
 
-    padding: 6px 10px;
+    padding: 6px 12px;
 
     border-bottom: 1px solid rgba(255,255,255,.85);
   }
@@ -352,12 +352,12 @@
 
     display: block;
 
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 
     color: var(--navy);
 
-    font-size: 16px;
-    line-height: 1.08;
+    font-size: 18px; /* Увеличен заголовок */
+    line-height: 1.1;
     font-weight: 800;
   }
 
@@ -368,7 +368,7 @@
 
     color: #394b6a;
 
-    font-size: 12.5px;
+    font-size: 14px; /* Увеличен подзаголовок */
     line-height: 1.15;
   }
 
@@ -383,15 +383,15 @@
 
     grid-template-columns: 1fr 1fr;
 
-    grid-template-rows: 1fr 1fr 0.8fr; /* Нижний ряд компактнее */
+    grid-template-rows: 1fr 1fr 0.8fr; 
 
-    gap: 5px; 
+    gap: 6px; 
 
     flex: 1;
 
     min-height: 0;
 
-    padding: 5px;
+    padding: 6px;
   }
 
 
@@ -423,12 +423,12 @@
 
   .info-card h3 {
 
-    margin: 0 0 4px;
+    margin: 0 0 6px;
 
     color: var(--header-dark);
 
-    font-size: 12px; 
-    line-height: 1;
+    font-size: 13.5px; /* Увеличен заголовок в карточке */
+    line-height: 1.05;
     font-weight: 800;
 
     text-transform: uppercase;
@@ -441,8 +441,8 @@
 
     color: var(--text);
 
-    font-size: 13px; 
-    line-height: 1.25; 
+    font-size: 14.5px; /* Увеличен основной текст */
+    line-height: 1.3; 
   }
 
 
@@ -460,13 +460,13 @@
 
     position: relative;
 
-    margin: 0 0 2px;
+    margin: 0 0 3px;
 
     padding-left: 10px;
 
     color: var(--text);
 
-    font-size: 13px; 
+    font-size: 14.5px; /* Увеличен текст списка */
     line-height: 1.25;
   }
 
@@ -486,9 +486,9 @@
 
     top: .4em;
 
-    width: 4px;
+    width: 5px;
 
-    height: 4px;
+    height: 5px;
 
     border-radius: 50%;
 
@@ -532,7 +532,7 @@
 
 
   .ai-team-widget.pdf-mode .ai-team-body {
-    height: 516px; 
+    height: 556px; /* 600 - 44 */
   }
 
 
@@ -561,7 +561,7 @@
 
       width: 757px;
 
-      height: 560px;
+      height: 600px;
 
       margin: 0;
     }
@@ -571,7 +571,7 @@
     }
 
     .ai-team-body {
-      height: 516px !important;
+      height: 556px !important;
     }
 
   }
@@ -1624,11 +1624,11 @@
 
                 width: 757,
 
-                height: 560, 
+                height: 600, 
 
                 windowWidth: 757,
 
-                windowHeight: 560
+                windowHeight: 600
 
               }
             );
@@ -1658,7 +1658,7 @@
 
                 unit: 'px',
 
-                format: [757, 560], 
+                format: [757, 600], 
 
                 hotfixes: ['px_scaling']
 
@@ -1679,7 +1679,7 @@
 
             757,
 
-            560,
+            600,
 
             undefined,
 
