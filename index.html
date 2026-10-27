@@ -45,7 +45,7 @@
 
     width: 100%;
     max-width: 757px; 
-    height: 580px; /* Увеличено, чтобы вкладки точно поместились */
+    height: 620px; /* Увеличено, чтобы тексты точно поместились */
 
     margin: 0 auto;
 
@@ -125,7 +125,7 @@
 
 
   /* =========================
-     ШАПКА (Стиль как в референсе)
+     ШАПКА
      ========================= */
 
   .ai-team-header {
@@ -166,12 +166,11 @@
 
     display: grid;
 
-    /* Увеличили левую колонку до 240px для вкладок */
-    grid-template-columns: 240px 1fr; 
+    grid-template-columns: 250px 1fr; /* Увеличили ширину вкладок */
 
     gap: 8px;
 
-    height: 474px; /* Увеличено под общую высоту 580px */
+    height: 514px; /* Подстроено под общую высоту 620px */
 
     padding: 0 8px 8px;
   }
@@ -197,15 +196,11 @@
 
     position: relative;
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
+    display: block; /* Изменено, чтобы номер и текст шли в одну строку */
+    
     width: 100%;
 
-    padding: 8px 10px; /* Увеличен вертикальный отступ */
+    padding: 10px 10px; /* Чуть больше отступов по вертикали */
 
     border: 1px solid transparent;
 
@@ -213,8 +208,8 @@
 
     font-family: Arial, Helvetica, sans-serif;
 
-    font-size: 13.5px; 
-    line-height: 1.2;
+    font-size: 13px; /* Немного уменьшили для надежности */
+    line-height: 1.25;
 
     font-weight: 800;
 
@@ -267,17 +262,9 @@
 
 
   .tab-num {
-
-    flex: 0 0 auto;
-
+    display: inline; /* В строку с текстом */
+    margin-right: 4px;
     font-weight: 800;
-  }
-
-  /* Гарантируем, что текст будет переноситься аккуратно */
-  .project-tab > span:last-child {
-    flex: 1;
-    min-width: 0;
-    overflow-wrap: break-word;
   }
 
 
@@ -384,7 +371,7 @@
 
     grid-template-columns: 1fr 1fr;
 
-    grid-template-rows: 1fr 1fr .85fr;
+    grid-template-rows: 1fr 1fr 1fr; /* Равномерное распределение */
 
     gap: 6px; 
 
@@ -411,6 +398,10 @@
     border-radius: 6px;
 
     overflow: hidden;
+
+    /* Для защиты от вылезания текста */
+    display: flex;
+    flex-direction: column;
   }
 
 
@@ -425,7 +416,7 @@
 
     color: var(--header-dark);
 
-    font-size: 13.5px; 
+    font-size: 13px; 
     line-height: 1;
     font-weight: 800;
 
@@ -439,7 +430,7 @@
 
     color: var(--text);
 
-    font-size: 14px; 
+    font-size: 13.5px; /* Слегка уменьшили для компактности */
     line-height: 1.35; 
   }
 
@@ -464,7 +455,7 @@
 
     color: var(--text);
 
-    font-size: 14px; 
+    font-size: 13.5px; 
     line-height: 1.25;
   }
 
@@ -530,7 +521,7 @@
 
 
   .ai-team-widget.pdf-mode .ai-team-body {
-    height: 536px; /* 580 - 44 */
+    height: 576px; /* 620 - 44 */
   }
 
 
@@ -559,7 +550,7 @@
 
       width: 757px;
 
-      height: 580px;
+      height: 620px;
 
       margin: 0;
     }
@@ -569,7 +560,7 @@
     }
 
     .ai-team-body {
-      height: 536px !important;
+      height: 576px !important;
     }
 
   }
@@ -637,10 +628,7 @@
         aria-selected="true">
 
         <span class="tab-num">1.</span>
-
-        <span>
-          ИИ-ассистент на готовой модели
-        </span>
+        <span>ИИ-ассистент на готовой модели</span>
 
       </button>
 
@@ -652,10 +640,7 @@
         aria-selected="false">
 
         <span class="tab-num">2.</span>
-
-        <span>
-          ИИ-агент с интеграциями
-        </span>
+        <span>ИИ-агент с интеграциями</span>
 
       </button>
 
@@ -667,10 +652,7 @@
         aria-selected="false">
 
         <span class="tab-num">3.</span>
-
-        <span>
-          Мультиагентная система
-        </span>
+        <span>Мультиагентная система</span>
 
       </button>
 
@@ -682,10 +664,7 @@
         aria-selected="false">
 
         <span class="tab-num">4.</span>
-
-        <span>
-          Открытая модель внутри контура
-        </span>
+        <span>Открытая модель внутри контура</span>
 
       </button>
 
@@ -697,10 +676,7 @@
         aria-selected="false">
 
         <span class="tab-num">5.</span>
-
-        <span>
-          Дообучение готовой LLM
-        </span>
+        <span>Дообучение готовой LLM</span>
 
       </button>
 
@@ -712,10 +688,7 @@
         aria-selected="false">
 
         <span class="tab-num">6.</span>
-
-        <span>
-          Собственная ML-модель
-        </span>
+        <span>Собственная ML-модель</span>
 
       </button>
 
@@ -727,10 +700,7 @@
         aria-selected="false">
 
         <span class="tab-num">7.</span>
-
-        <span>
-          Работающий ИИ-продукт
-        </span>
+        <span>Работающий ИИ-продукт</span>
 
       </button>
 
@@ -1645,11 +1615,11 @@
 
                 width: 757,
 
-                height: 580, /* Обновлено под новую высоту */
+                height: 620, /* Обновлено под новую высоту */
 
                 windowWidth: 757,
 
-                windowHeight: 580
+                windowHeight: 620
 
               }
             );
@@ -1679,7 +1649,7 @@
 
                 unit: 'px',
 
-                format: [757, 580], /* Обновлено под новую высоту */
+                format: [757, 620], /* Обновлено под новую высоту */
 
                 hotfixes: ['px_scaling']
 
@@ -1700,7 +1670,7 @@
 
             757,
 
-            580,
+            620,
 
             undefined,
 
